@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Young+Serif&display=swap');
+
+
+:root{
+    /*  ||| Colors || */
+    --color-moderate-violet: #7548c8;
+    --very-dark-grayish-color: #48556a;
+    --very-dark-blackish-blue: #19212e;
+    --color-white: #ffffff;
+    --light-gray: #cfcfcf;
+    --light-grayish-blue: #ecf2f8;
+    
+    /* || Fonts */
+    --fs-small: 0.6875rem;
+    --fs-medium: 0.6875rem;
+    --fs-large: 1.25rem;
+    --ff-primary: 'Barlow Semi condensed', sans-serif;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 600;
+}
+
+
+/* || RESETS || */
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+img{
+    max-width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+body{
+    color: var(--light-grayish-blue);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-400);
+    display: grid;
+    place-content: center;
+    min-height: 100dvh;
+}
+
+/* || Text Styles || */
+
+.user-name, .user-role{
+    color: var(--light-gray);
+    user-select: none;
+}
+
+.user-role{
+    opacity: 50%;
+}
+
+.user-name{
+    font-weight: var(--fw-700);
+}
+
+
+/*  || components || */
+
+.testimonial-content > p:not([class]) {
+    opacity: 70%;
+}
+
+.testimonial-container{
+    display: grid;
+    gap: 1.25rem;
+    width: min(90%, 70rem);
+    margin: 4rem 0;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five'
+    ;
+}
+
+.testimonial:nth-child(1){
+    grid-area: one;
+}
+
+.testimonial:nth-child(2){
+    grid-area: two;
+}
+
+.testimonial:nth-child(3){
+    grid-area: three;
+}
+
+.testimonial:nth-child(4){
+    grid-area: four;
+}
+
+.testimonial:nth-child(5){
+    grid-area: five;
+}
+
+.testimonial-heading{
+    font-size: var(--fs-large);
+    color: var(--color-white);
+    margin: 1rem 0 .8rem;
+}
+
+/* || Layout styles */
+
+
+.testimonial{
+    background-color: var(--color-moderate-violet);
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+}
+
+
+/* || utility classes || */
+
+.flex{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.testimonial-bg-gray{
+    background-color: var(--very-dark-grayish-color) !important;
+}
+
+.testimonial-bg-black{
+    background-color: var(--very-dark-blackish-blue) !important;
+}
+
+.testimonial-bg-white{
+    background-color: var(--color-white);
+}
+
+.testimonial-bg-white p{
+    color:var(--very-dark-blackish-blue)
+}
+
+
+.user-details img{
+    width: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--light-grayish-blue);
+}
+
+
+
+
+@media  screen and (min-width: 35em) {
+    .testimonial-container{
+        grid-template-areas:
+        'one one'
+        'two five'
+        'three five'
+        'four four'
+        ;
+}
+    
+}
+@media  screen and (min-width: 55em) {
+    .testimonial-container{
+        grid-template-areas:
+        'one one two five'
+        'three four four five'
+        ;
+        padding-left: 8rem;
+}
+    
+}
+
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    padding: .7rem;
+    background-color: var(--color-moderate-violet);
+    color: #f5f6f7;
+}
+.attribution a { color: #f5f6f7;}
